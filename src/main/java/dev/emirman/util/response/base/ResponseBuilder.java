@@ -13,7 +13,7 @@ public final class ResponseBuilder {
     ResponseBuilder() {
     }
 
-    public static ResponseBuilder aResponse() {
+    public static ResponseBuilder newBuilder() {
         return new ResponseBuilder();
     }
 
