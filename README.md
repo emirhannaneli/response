@@ -1,3 +1,18 @@
+### Gradle
+
+```gradle
+repositories {
+    maven{
+        url = uri("https://repo.emirman.dev/repository/maven-public/")
+    }
+}
+
+dependencies {
+    implementation 'dev.emirman.util:response:1.0.0'
+}
+
+```
+
 ### Class: Response
 
 The `Response` class represents a response object that contains a message, status, code, and details. It provides methods to set and retrieve these properties.
