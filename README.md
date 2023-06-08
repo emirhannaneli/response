@@ -49,12 +49,12 @@ The `PageResponse` class is a generic class that represents a response object fo
 
 #### Usage Example:
 ```java
-Page<String> data = new Page<>();
-List<Integer> response = new ArrayList<>();
+Page<User> data = new Page<>();
+List<RUser> response = new ArrayList<>();
 // Populate data and response lists
 
-PageResponse<String, Integer> pageResponse = new PageResponse<>(data, response);
-Response result = pageResponse.of("items", "Page response");
+PageResponse<User, RUser> pageResponse = new PageResponse<>(data, response);
+Response result = pageResponse.of("users", "users successfully listed.");
 ```
 
 Note: The above code snippets are simplified examples to demonstrate the usage of the classes. Actual implementation details and additional methods might be present based on the full code context.
