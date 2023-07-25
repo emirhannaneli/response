@@ -2,12 +2,13 @@ package dev.emirman.util.response.page;
 
 import dev.emirman.util.response.base.Response;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.TreeMap;
 
 public record PageResponse<K, V>(Page<K> data, List<V> response) {
-    public Response of(String name, String message) {
+    public ResponseEntity<Response> of(String name, String message) {
         return Response.builder()
                 .withMessage(message)
                 .withDetails(new TreeMap<>() {{

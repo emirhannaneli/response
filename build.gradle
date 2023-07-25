@@ -9,7 +9,7 @@ publishing {
             name = "Emirman"
             def releasesRepoUrl = "https://repo.emirman.dev/repository/maven-releases/"
             def snapshotsRepoUrl = "https://repo.emirman.dev/repository/maven-snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            url = snapshotsRepoUrl
             credentials {
                 username = System.getenv("REPO_USER")
                 password = System.getenv("REPO_KEY")
@@ -24,7 +24,7 @@ publishing {
 }
 
 group = 'dev.emirman.util'
-version = '1.0.2'
+version = '1.0.3-SNAPSHOT'
 
 repositories {
     mavenCentral()

@@ -1,6 +1,7 @@
 package dev.emirman.util.response.base;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.TreeMap;
 
@@ -37,12 +38,12 @@ public final class ResponseBuilder {
         return this;
     }
 
-    public Response build() {
+    public ResponseEntity<Response> build() {
         Response response = new Response();
-        response.setMessage(message);
-        response.setStatus(status);
-        response.setCode(code);
-        response.setDetails(details);
-        return response;
+        response.message(message);
+        response.status(status);
+        response.code(code);
+        response.details(details);
+        return new ResponseEntity<>(response, status);
     }
 }

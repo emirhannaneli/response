@@ -39,7 +39,7 @@ public class Response implements Serializable {
         return message;
     }
 
-    public Response setMessage(String message) {
+    public Response message(String message) {
         this.message = message;
         return this;
     }
@@ -48,7 +48,7 @@ public class Response implements Serializable {
         return status;
     }
 
-    public Response setStatus(HttpStatus status) {
+    public Response status(HttpStatus status) {
         this.status = status;
         return this;
     }
@@ -57,7 +57,7 @@ public class Response implements Serializable {
         return code;
     }
 
-    public Response setCode(String code) {
+    public Response code(String code) {
         this.code = code;
         return this;
     }
@@ -66,7 +66,7 @@ public class Response implements Serializable {
         return details;
     }
 
-    public Response setDetails(TreeMap<String, ?> details) {
+    public Response details(TreeMap<String, ?> details) {
         this.details = details;
         return this;
     }

@@ -13,7 +13,8 @@ public class ResponseSerializer extends JsonSerializer<Response> {
         gen.writeStartObject();
         gen.writeStringField("message", value.message());
         gen.writeNumberField("status", value.status().value());
-        gen.writeStringField("code", value.code());
+        if (value.code() != null)
+            gen.writeStringField("code", value.code());
         if (value.details() != null)
             gen.writeObjectField("details", value.details());
         gen.writeEndObject();
