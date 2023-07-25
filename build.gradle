@@ -9,7 +9,7 @@ publishing {
             name = "Emirman"
             def releasesRepoUrl = "https://repo.emirman.dev/repository/maven-releases/"
             def snapshotsRepoUrl = "https://repo.emirman.dev/repository/maven-snapshots/"
-            url = snapshotsRepoUrl
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
                 username = System.getenv("REPO_USER")
                 password = System.getenv("REPO_KEY")
