@@ -12,6 +12,7 @@ public final class ResponseBuilder {
     private TreeMap<String, ?> details;
 
     ResponseBuilder() {
+        this.status = HttpStatus.OK;
     }
 
     public static ResponseBuilder newBuilder() {
