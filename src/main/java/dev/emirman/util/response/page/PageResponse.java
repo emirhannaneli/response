@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.TreeMap;
 
-public record PageResponse<K, V>(Page<K> data, List<V> response) {
+public record PageResponse<K>(Page<K> data, List<K> response) {
     public ResponseEntity<Response> of(String name, String message) {
         return Response.builder()
                 .withMessage(message)
