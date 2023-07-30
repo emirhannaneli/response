@@ -7,10 +7,13 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.TreeMap;
 
+import static org.springframework.http.HttpStatus.OK;
+
 public record PageResponse<K>(Page<K> data, List<K> response) {
     public ResponseEntity<Response> of(String name, String message) {
         return Response.builder()
                 .withMessage(message)
+                .withStatus(OK)
                 .withDetails(new TreeMap<>() {{
                     put("info", new TreeMap<>() {{
                         put("totalItems", data.getTotalElements());

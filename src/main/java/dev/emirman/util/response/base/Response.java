@@ -45,7 +45,7 @@ public class Response implements Serializable {
     }
 
     public HttpStatus status() {
-        return status;
+        return status == null ? HttpStatus.OK : status;
     }
 
     public Response status(HttpStatus status) {
