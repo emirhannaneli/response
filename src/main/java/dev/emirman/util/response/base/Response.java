@@ -22,13 +22,7 @@ public class Response implements Serializable {
     private TreeMap<String, ?> details;
 
     public Response() {
-    }
-
-    public Response(String message, HttpStatus status, String code, TreeMap<String, ?> details) {
-        this.message = message;
-        this.status = status;
-        this.code = code;
-        this.details = details;
+        this.status = HttpStatus.OK;
     }
 
     public static ResponseBuilder builder() {
@@ -45,7 +39,7 @@ public class Response implements Serializable {
     }
 
     public HttpStatus status() {
-        return status == null ? HttpStatus.OK : status;
+        return status;
     }
 
     public Response status(HttpStatus status) {
