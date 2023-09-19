@@ -8,7 +8,7 @@ import dev.emirman.util.response.serializer.ResponseSerializer;
 import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
-import java.util.TreeMap;
+import java.util.Map;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
@@ -19,7 +19,7 @@ public class Response implements Serializable {
     private HttpStatus status;
     private String code;
     @JsonInclude(NON_NULL)
-    private TreeMap<String, ?> details;
+    private Map<String, ?> details;
 
     public Response() {
         this.status = HttpStatus.OK;
@@ -56,11 +56,11 @@ public class Response implements Serializable {
         return this;
     }
 
-    public TreeMap<String, ?> details() {
+    public Map<String, ?> details() {
         return details;
     }
 
-    public Response details(TreeMap<String, ?> details) {
+    public Response details(Map<String, ?> details) {
         this.details = details;
         return this;
     }

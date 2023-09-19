@@ -3,13 +3,14 @@ package dev.emirman.util.response.base;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 public final class ResponseBuilder {
     private String message;
     private HttpStatus status;
     private String code;
-    private TreeMap<String, ?> details;
+    private Map<String, ?> details;
 
     ResponseBuilder() {
         this.status = HttpStatus.OK;
@@ -34,7 +35,7 @@ public final class ResponseBuilder {
         return this;
     }
 
-    public ResponseBuilder withDetails(TreeMap<String, ?> details) {
+    public ResponseBuilder withDetails(Map<String, ?> details) {
         this.details = details;
         return this;
     }
